@@ -2,8 +2,6 @@
 
 ## [1.0.0]
 
-Remember to backup.
-
 **Changes**
 - Something
 - Something else

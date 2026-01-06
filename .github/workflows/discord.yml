@@ -94,10 +94,10 @@ jobs:
           embeds: |
             [
               {
-                "title": "Surface Living — New Release",
+                "title": "Surface Living — New Release [${{ needs.info.outputs.project_version }}]",
                 "url": "https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }}",
                 "color": 5763719,
-                "description": "A fresh update to **Surface Living** is out.${{ steps.discord_changelog.outputs.changelog_escaped }}",
+                "description": "A fresh update to **Surface Living** is out.\n${{ steps.discord_changelog.outputs.changelog_escaped }}",
                 "fields": [
                   {
                     "name": "Pack Version",
@@ -111,10 +111,6 @@ jobs:
                     "name": "Minecraft",
                     "value": "${{ needs.info.outputs.mc_version }}"
                   },
-                  # {
-                  #   "name": "",
-                  #   "value": "${{ steps.discord_changelog.outputs.changelog_escaped }}"
-                  # },
                   {
                     "name": "Links",
                     "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }})\n→ [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n→ [Optional support](https://ko-fi.com/irunatbullets)"
