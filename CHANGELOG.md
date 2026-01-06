@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.5]
+
+Special mention about how I'm not very good at this.
+
+**Improvements ✨**
+- Removed geese
+
+**Added ✅**
+- Something
+- Something else
+
+**Removed ❌**
+- Yo
+- Yo yo
+
+**Bugfixes 🐛**
+- Config stuff
+
 ## [1.0.4]
 
 Boring changelog
