@@ -32,38 +32,34 @@ jobs:
                     "name": "irunatbullets",
                     "icon_url": "https://cdn.modrinth.com/data/PoHFfv3G/53d3a9085947f25804334a2c5de8f656f3bb2f20.png"
                   },
-                  "title": "New version of Surface Living released!",
+                  "title": "Surface Living — New Release",
                   "url": "https://modrinth.com/modpack/surface-living/versions",
-                  "color": "#57F287",
+                  "color": 5763719,
+                  "description": "A fresh update to **Surface Living** is out.\n\nThis release focuses on stability and small refinements while keeping the pack's original feel intact.",
                   "fields": [
                     {
-                      "name": "Pack version",
+                      "name": "Pack Version",
                       "value": "1.0.0",
                       "inline": true
                     },
                     {
                       "name": "Loader",
-                      "value": "neoforge",
+                      "value": "NeoForge",
                       "inline": true
                     },
                     {
-                      "name": "Mincecraft version",
+                      "name": "Minecraft",
                       "value": "1.21.1",
                       "inline": true
                     },
                     {
                       "name": "Changelog",
-                      "value": "- something\n- something else"
+                      "value": "• Something improved\n• Something else adjusted"
                     },
                     {
                       "name": "Links",
-                      "value": "- Download this version of the pack [here](https://modrinth.com/modpack/surface-living/versions)\n- If you like what I'm doing, [support me](https://ko-fi.com/irunatbullets)\n - If you think there's room for improvement let me know on[Github](https://github.com/irunatbullets/surface-living/issues)"                    },
-                  ],
-                  "thumbnail": {
-                    "url": "https://cdn.modrinth.com/data/mPwYBsJ3/images/25bd95745cd6cc5d7d25c34c642792ffbdd48ead.png"
-                  },
-                  "image": {
-                    "url": "https://cdn.modrinth.com/data/mPwYBsJ3/images/25bd95745cd6cc5d7d25c34c642792ffbdd48ead.png"
-                  }
+                      "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/versions)\n→ [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n→ [Optional support](https://ko-fi.com/irunatbullets)"
+                    }
+                  ]
                 }
               ]
