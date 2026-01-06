@@ -112,7 +112,7 @@ jobs:
                     "value": "${{ needs.info.outputs.mc_version }}"
                   },
                   {
-                    "name": "Changelog",
+                    "name": "",
                     "value": "${{ steps.discord_changelog.outputs.changelog_escaped }}"
                   },
                   {
