@@ -70,49 +70,60 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
   discord-message:
-      name: Discord Message
-      needs: info
-      runs-on: ubuntu-latest
-      if: github.repository_owner == 'irunatbullets'
-      steps:
-        - name: Send Discord message
-          uses: hugoalh/send-discord-webhook-ghaction@v7.0.5
-          with:
-            key: "${{secrets.DISCORD_WEBHOOK}}"
-            username: "irunatbullets"
-            avatar_url: "https://cdn.modrinth.com/data/PoHFfv3G/53d3a9085947f25804334a2c5de8f656f3bb2f20.png"
-            content_links_no_embed: .+
-            embeds: |
-              [
-                {
-                  "title": "Surface Living — New Release",
-                  "url": "https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }}",
-                  "color": 5763719,
-                  "description": "A fresh update to **Surface Living** is out.",
-                  "fields": [
-                    {
-                      "name": "Pack Version",
-                      "value": "${{ needs.info.outputs.project_version }}"
-                    },
-                    {
-                      "name": "Loader",
-                      "value": "${{ needs.info.outputs.loader_type }}"
-                    },
-                    {
-                      "name": "Minecraft",
-                      "value": "${{ needs.info.outputs.mc_version }}"
-                    },
-                    {
-                      "name": "Changelog",
-                      "value": "${{ needs.info.outputs.changelog | replace('\n','\\n') }}"
-                    },
-                    {
-                      "name": "Links",
-                      "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }})\n→ [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n→ [Optional support](https://ko-fi.com/irunatbullets)"
-                    }
-                  ],
-                  "thumbnail": {
-                    "url": "https://cdn.modrinth.com/data/mPwYBsJ3/images/25bd95745cd6cc5d7d25c34c642792ffbdd48ead.png"
+    name: Discord Message
+    needs: info
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'irunatbullets'
+    steps:
+      # Step 1 — Prepare Discord-safe changelog
+      - name: Prepare Discord changelog
+        id: discord_changelog
+        run: |
+          # Escape newlines from the info job
+          ESCAPED=$(echo "${{ needs.info.outputs.changelog }}" | sed ':a;N;$!ba;s/\n/\\n/g')
+          # Optional: convert bullets from "-" to "•" for nicer display
+          ESCAPED=$(echo "$ESCAPED" | sed 's/^- /• /g')
+          echo "changelog_escaped=$ESCAPED" >> "$GITHUB_OUTPUT"
+
+      # Step 2 — Send the Discord message
+      - name: Send Discord message
+        uses: hugoalh/send-discord-webhook-ghaction@v7.0.5
+        with:
+          key: "${{ secrets.DISCORD_WEBHOOK }}"
+          username: "irunatbullets"
+          avatar_url: "https://cdn.modrinth.com/data/PoHFfv3G/53d3a9085947f25804334a2c5de8f656f3bb2f20.png"
+          content_links_no_embed: .+
+          embeds: |
+            [
+              {
+                "title": "Surface Living — New Release",
+                "url": "https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }}",
+                "color": 5763719,
+                "description": "A fresh update to **Surface Living** is out.",
+                "fields": [
+                  {
+                    "name": "Pack Version",
+                    "value": "${{ needs.info.outputs.project_version }}"
+                  },
+                  {
+                    "name": "Loader",
+                    "value": "${{ needs.info.outputs.loader_type }}"
+                  },
+                  {
+                    "name": "Minecraft",
+                    "value": "${{ needs.info.outputs.mc_version }}"
+                  },
+                  {
+                    "name": "Changelog",
+                    "value": "${{ steps.discord_changelog.outputs.changelog_escaped }}"
+                  },
+                  {
+                    "name": "Links",
+                    "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }})\n→ [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n→ [Optional support](https://ko-fi.com/irunatbullets)"
                   }
+                ],
+                "thumbnail": {
+                  "url": "https://cdn.modrinth.com/data/mPwYBsJ3/images/25bd95745cd6cc5d7d25c34c642792ffbdd48ead.png"
                 }
-              ]
+              }
+            ]
