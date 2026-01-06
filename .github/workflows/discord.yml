@@ -108,8 +108,7 @@ jobs:
                 "url": "https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }}",
                 "color": 5763719,
                 "description": "A fresh update to **Surface Living** is out.\n
-                ${{ steps.discord_changelog.outputs.changelog_escaped }}\n\n
-                **Pack Version:** ${{ needs.info.outputs.project_version }}\n**Loader:** ${{ needs.info.outputs.loader_type }}\n**Minecraft:** ${{ needs.info.outputs.mc_version }}",
+                ${{ steps.discord_changelog.outputs.changelog_escaped }}\n\n**Pack Version:** ${{ needs.info.outputs.project_version }}\n**Loader:** ${{ needs.info.outputs.loader_type }}\n**Minecraft:** ${{ needs.info.outputs.mc_version }}",
                 "fields": [
                   {
                     "name": "Links",
