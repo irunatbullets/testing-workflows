@@ -28,12 +28,8 @@ jobs:
             embeds: |
               [
                 {
-                  # "author": {
-                  #   "name": "irunatbullets",
-                  #   "icon_url": "https://cdn.modrinth.com/data/PoHFfv3G/53d3a9085947f25804334a2c5de8f656f3bb2f20.png"
-                  # },
                   "title": "Surface Living — New Release",
-                  "url": "https://modrinth.com/modpack/surface-living/versions",
+                  "url": "https://modrinth.com/modpack/surface-living/version/1.0.0",
                   "color": 5763719,
                   "description": "A fresh update to **Surface Living** is out.",
                   "fields": [
@@ -58,7 +54,7 @@ jobs:
                     },
                     {
                       "name": "Links",
-                      "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/versions)\n→ [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n→ [Optional support](https://ko-fi.com/irunatbullets)"
+                      "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/1.0.0)\n→ [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n→ [Optional support](https://ko-fi.com/irunatbullets)"
                     }
                   ]
                 }
