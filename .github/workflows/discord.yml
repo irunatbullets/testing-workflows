@@ -55,9 +55,6 @@ jobs:
           LATEST=$(awk '/^## \[/{if(!found){found=1; next} else{exit}} found{print}' CHANGELOG.md)
           CLEAN=$(echo "$LATEST" | sed '/^EOF/d')
 
-          # Discord-safe version (escaped newlines)
-          ESCAPED=$(printf '%s' "$CLEAN" | sed ':a;N;$!ba;s/\n/\\n/g')
-
           {
             echo "project_version=$VERSION"
             echo "project_full_name=$NAME $VERSION"
@@ -75,15 +72,12 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository_owner == 'irunatbullets'
     steps:
-      # Step 1 — Prepare Discord-safe changelog
       - name: Prepare Discord changelog
         id: discord_changelog
         run: |
           # Escape newlines from the info job
           ESCAPED=$(echo "${{ needs.info.outputs.changelog }}" | sed ':a;N;$!ba;s/\n/\\n/g')
           echo "changelog_escaped=$ESCAPED" >> "$GITHUB_OUTPUT"
-
-      # Step 2 — Send the Discord message
       - name: Send Discord message
         uses: hugoalh/send-discord-webhook-ghaction@v7.0.5
         with:
