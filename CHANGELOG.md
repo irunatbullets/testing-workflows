@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.2]
+
+What does this look like?
+
 ## [1.0.1]
 
 - Non-intial release
