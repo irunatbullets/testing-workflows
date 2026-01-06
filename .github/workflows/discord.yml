@@ -85,6 +85,22 @@ jobs:
           username: "irunatbullets"
           avatar_url: "https://cdn.modrinth.com/data/PoHFfv3G/53d3a9085947f25804334a2c5de8f656f3bb2f20.png"
           content_links_no_embed: .+
+          content: |
+            # [Surface Living — New Release \[${{ needs.info.outputs.project_version }}\]](https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }})
+
+            A fresh update to **Surface Living** is out.\
+            ${{ steps.discord_changelog.outputs.changelog_escaped }}
+            
+            **Pack Version:** ${{ needs.info.outputs.project_version }}
+            **Loader:** ${{ needs.info.outputs.loader_type }}
+            **Minecraft:** ${{ needs.info.outputs.mc_version }}
+
+            ## Links
+            → [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }})\n
+            → [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n
+            → [Full changelog](https://github.com/irunatbullets/surface-living/blob/main/CHANGELOG.md)\n
+            → [Optional support](https://ko-fi.com/irunatbullets)
+
           embeds: |
             [
               {
