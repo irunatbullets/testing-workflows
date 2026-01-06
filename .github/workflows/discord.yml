@@ -98,7 +98,7 @@ jobs:
             ### Links
             → [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }})
             → [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)
-            → [Full changelog](https://github.com/irunatbullets/surface-living/blob/main/CHANGELOG.md)\n
+            → [Full changelog](https://github.com/irunatbullets/surface-living/blob/main/CHANGELOG.md)
             → [Optional support](https://ko-fi.com/irunatbullets)
 
 
