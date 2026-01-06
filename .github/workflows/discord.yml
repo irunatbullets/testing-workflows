@@ -113,7 +113,7 @@ jobs:
                   },
                   {
                     "name": "Links",
-                    "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }})\n→ [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n→ [Optional support](https://ko-fi.com/irunatbullets)"
+                    "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }})\n→ [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n→ [Full changelog](https://github.com/irunatbullets/surface-living/blob/main/CHANGELOG.md)\n→ [Optional support](https://ko-fi.com/irunatbullets)"
                   }
                 ],
                 "thumbnail": {
