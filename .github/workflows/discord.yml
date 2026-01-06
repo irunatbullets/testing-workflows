@@ -13,8 +13,61 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  info:
+    name: Project Info
+    runs-on: ubuntu-latest
+    outputs:
+      project_version: ${{ steps.set.outputs.project_version }}
+      project_full_name: ${{ steps.set.outputs.project_full_name }}
+      mc_version: ${{ steps.set.outputs.mc_version }}
+      loader_type: ${{ steps.set.outputs.loader_type }}
+      changelog: ${{ steps.set.outputs.changelog }}
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Validate files
+        run: |
+          test -f CHANGELOG.md
+          test -f pakku.json
+          test -f pakku-lock.json
+
+      - name: Extract info + changelog
+        id: set
+        run: |
+          VERSION=$(grep -m1 '^## ' CHANGELOG.md | sed -E 's/^## \[?([0-9]+\.[0-9]+\.[0-9]+)\]?/\1/')
+
+          if [ -z "$VERSION" ]; then
+            echo "Could not determine version"
+            exit 1
+          fi
+
+          PK_INFO=$(jq '.' pakku.json)
+          PK_LOCK=$(jq '.' pakku-lock.json)
+
+          NAME=$(echo "$PK_INFO" | jq -r '.name')
+          MC_VERSION=$(echo "$PK_LOCK" | jq -r '.mc_versions[0]')
+          LOADER_TYPE=$(echo "$PK_LOCK" | jq -r '.loaders | keys[0]')
+
+          LATEST=$(awk '/^## \[/{if(!found){found=1; next} else{exit}} found{print}' CHANGELOG.md)
+          CLEAN=$(echo "$LATEST" | sed '/^EOF/d')
+
+          {
+            echo "project_version=$VERSION"
+            echo "project_full_name=$NAME $VERSION"
+            echo "mc_version=$MC_VERSION"
+            echo "loader_type=$LOADER_TYPE"
+
+            echo "changelog<<EOF"
+            echo "$CLEAN"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
   discord-message:
       name: Discord Message
+      needs: info
       runs-on: ubuntu-latest
       if: github.repository_owner == 'irunatbullets'
       steps:
@@ -29,29 +82,29 @@ jobs:
               [
                 {
                   "title": "Surface Living — New Release",
-                  "url": "https://modrinth.com/modpack/surface-living/version/1.0.0",
+                  "url": "https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }}",
                   "color": 5763719,
                   "description": "A fresh update to **Surface Living** is out.",
                   "fields": [
                     {
                       "name": "Pack Version",
-                      "value": "1.0.0"
+                      "value": "${{ needs.info.outputs.project_version }}"
                     },
                     {
                       "name": "Loader",
-                      "value": "NeoForge"
+                      "value": "${{ needs.info.outputs.loader_type }}"
                     },
                     {
                       "name": "Minecraft",
-                      "value": "1.21.1"
+                      "value": "${{ needs.info.outputs.mc_version }}"
                     },
                     {
                       "name": "Changelog",
-                      "value": "• Something improved\n• Something else adjusted"
+                      "value": "${{ needs.info.outputs.changelog }}"
                     },
                     {
                       "name": "Links",
-                      "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/1.0.0)\n→ [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n→ [Optional support](https://ko-fi.com/irunatbullets)"
+                      "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }})\n→ [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n→ [Optional support](https://ko-fi.com/irunatbullets)"
                     }
                   ],
                   "thumbnail": {
