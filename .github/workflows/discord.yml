@@ -51,12 +51,8 @@ jobs:
           MC_VERSION=$(echo "$PK_LOCK" | jq -r '.mc_versions[0]')
           LOADER_TYPE=$(echo "$PK_LOCK" | jq -r '.loaders | keys[0]')
 
-          # Extract latest changelog section
           LATEST=$(awk '/^## \[/{if(!found){found=1; next} else{exit}} found{print}' CHANGELOG.md)
           CLEAN=$(echo "$LATEST" | sed '/^EOF/d')
-
-          # Discord-safe version (escaped newlines)
-          ESCAPED=$(printf '%s' "$CLEAN" | sed ':a;N;$!ba;s/\n/\\n/g')
 
           {
             echo "project_version=$VERSION"
@@ -68,8 +64,9 @@ jobs:
             echo "$CLEAN"      # raw, for GitHub/Modrinth
             echo "EOF"
 
+            # Do NOT escape newlines here; leave raw
             echo "changelog_discord<<EOF"
-            echo "$ESCAPED"    # JSON-safe, for Discord embed
+            echo "$CLEAN"
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
