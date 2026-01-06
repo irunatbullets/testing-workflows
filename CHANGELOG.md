@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.3]
+
+**Added**
+- Something
+- Something else
+
+**Updated**
+- torch
+- pickaxe
+
+**Removed**
+- Yo
+- Yo yo
+
+**Bugfixes**
+- There were too many ducks
+
 ## [1.0.2]
 
 What does this look like?
