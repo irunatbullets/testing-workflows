@@ -25,8 +25,6 @@ jobs:
             username: "irunatbullets"
             avatar_url: "https://cdn.modrinth.com/data/PoHFfv3G/53d3a9085947f25804334a2c5de8f656f3bb2f20.png"
             content_links_no_embed: .+
-            content: |
-              test
             embeds: |
               [
                 {
@@ -37,7 +35,6 @@ jobs:
                   "title": "New version of Surface Living released!",
                   "url": "https://modrinth.com/modpack/surface-living/versions",
                   "color": "#57F287",
-                  "description": "## Wow\nDoes this work? ```who knows```",
                   "fields": [
                     {
                       "name": "Pack version",
