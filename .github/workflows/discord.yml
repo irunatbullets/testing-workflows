@@ -37,15 +37,15 @@ jobs:
                   "title": "New version of Surface Living released!",
                   "url": "https://modrinth.com/modpack/surface-living/versions",
                   "color": "#57F287",
-                  "description": "##Wow\n\nDoes this work? ```who knows```",
+                  "description": "## Wow\nDoes this work? ```who knows```",
                   "fields": [
                     {
-                      "name": "Version",
+                      "name": "Pack version",
                       "value": "1.0.0",
                       "inline": true
                     },
                     {
-                      "name": "Platform",
+                      "name": "Loader",
                       "value": "neoforge",
                       "inline": true
                     },
@@ -56,12 +56,14 @@ jobs:
                     },
                     {
                       "name": "Changlog",
-                      "value": "- something\n\n- something else
-                      - another thing"
+                      "value": "- something\n- something else"
                     },
                   ],
+                  "thumbnail": {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/4-Nature-Wallpapers-2014-1_ukaavUI.jpg"
+                  },
                   "image": {
-                    "url": "hhttps://cdn.modrinth.com/data/mPwYBsJ3/images/25bd95745cd6cc5d7d25c34c642792ffbdd48ead.png"
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/A_picture_from_China_every_day_108.jpg"
                   }
                 }
               ]
