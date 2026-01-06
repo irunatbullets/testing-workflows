@@ -28,14 +28,14 @@ jobs:
             embeds: |
               [
                 {
-                  "author": {
-                    "name": "irunatbullets",
-                    "icon_url": "https://cdn.modrinth.com/data/PoHFfv3G/53d3a9085947f25804334a2c5de8f656f3bb2f20.png"
-                  },
+                  # "author": {
+                  #   "name": "irunatbullets",
+                  #   "icon_url": "https://cdn.modrinth.com/data/PoHFfv3G/53d3a9085947f25804334a2c5de8f656f3bb2f20.png"
+                  # },
                   "title": "Surface Living — New Release",
                   "url": "https://modrinth.com/modpack/surface-living/versions",
                   "color": 5763719,
-                  "description": "A fresh update to **Surface Living** is out.\n\n**Enjoy!**",
+                  "description": "A fresh update to **Surface Living** is out.",
                   "fields": [
                     {
                       "name": "Pack Version",
