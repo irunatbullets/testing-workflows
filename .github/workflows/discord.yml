@@ -87,6 +87,7 @@ jobs:
           content_links_no_embed: .+
           content: |
             # [Surface Living — New Release [${{ needs.info.outputs.project_version }}]](https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }})
+            
             A fresh update to **Surface Living** is out.
             ${{ needs.info.outputs.changelog }}
 
