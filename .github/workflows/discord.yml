@@ -52,12 +52,12 @@ jobs:
                       "inline": true
                     },
                     {
-                      "name": "Changlog",
+                      "name": "Changelog",
                       "value": "- something\n- something else"
                     },
                     {
                       "name": "Links",
-                      "value": "[1.0.0](https://modrinth.com/modpack/surface-living/versions) [Ko-fi](https://ko-fi.com/irunatbullets) [Issues](https://github.com/irunatbullets/surface-living/issues)"                    },
+                      "value": "- Download this version of the pack [here](https://modrinth.com/modpack/surface-living/versions)\n- If you like what I'm doing, [support me](https://ko-fi.com/irunatbullets)\n - If you think there's room for improvement let me know on[Github](https://github.com/irunatbullets/surface-living/issues)"                    },
                   ],
                   "thumbnail": {
                     "url": "https://cdn.modrinth.com/data/mPwYBsJ3/images/25bd95745cd6cc5d7d25c34c642792ffbdd48ead.png"
