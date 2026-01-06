@@ -26,4 +26,42 @@ jobs:
             avatar_url: "https://cdn.modrinth.com/data/PoHFfv3G/53d3a9085947f25804334a2c5de8f656f3bb2f20.png"
             content_links_no_embed: .+
             content: |
-              test
+              test{
+            embeds: |
+              [
+                {
+                  "author": {
+                    "name": "irunatbullets",
+                    "icon_url": "https://cdn.modrinth.com/data/PoHFfv3G/53d3a9085947f25804334a2c5de8f656f3bb2f20.png"
+                  }
+                  "title": "New version of Surface Living released!",
+                  "url": "https://modrinth.com/modpack/surface-living/versions",
+                  "color": "#57F287",
+                  "description": "##Wow\n\nDoes this work? ```who knows```",
+                  "fields": [
+                    {
+                      "name": "Version",
+                      "value": "1.0.0",
+                      "inline": true
+                    },
+                    {
+                      "name": "Platform",
+                      "value": "neoforge",
+                      "inline": true
+                    },
+                    {
+                      "name": "Mincecraft version",
+                      "value": "1.21.1",
+                      "inline": true
+                    },
+                    {
+                      "name": "Changlog",
+                      "value": "- something\n\n- something else
+                      - another thing"
+                    },
+                    "image": {
+                      "url": "hhttps://cdn.modrinth.com/data/mPwYBsJ3/images/25bd95745cd6cc5d7d25c34c642792ffbdd48ead.png"
+                    },
+                  ]
+                }
+              ]
