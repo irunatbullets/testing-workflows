@@ -4,9 +4,13 @@
 
 Remember to backup.
 
-### Changes
+**Changes**
 - Something
 - Something else
+
+**Fixes**
+- Yo
+- Yo yo
 
 ## [0.9.0]
 - Older stuff
