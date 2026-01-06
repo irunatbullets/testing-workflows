@@ -2,13 +2,20 @@
 
 ## [1.0.0]
 
-**Changes**
+**Added**
 - Something
 - Something else
 
-**Fixes**
+**Updated**
+- torch
+- pickaxe
+
+**Removed**
 - Yo
 - Yo yo
+
+**Bugfixes**
+- There were too many ducks
 
 ## [0.9.0]
 - Older stuff
