@@ -100,6 +100,10 @@ jobs:
                 "description": "A fresh update to **Surface Living** is out.\n${{ steps.discord_changelog.outputs.changelog_escaped }}\n\n",
                 "fields": [
                   {
+                    "name": "",
+                    "value": ""
+                  },
+                  {
                     "name": "Pack Version",
                     "value": "${{ needs.info.outputs.project_version }}"
                   },
