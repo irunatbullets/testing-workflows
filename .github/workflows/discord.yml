@@ -35,18 +35,15 @@ jobs:
                   "fields": [
                     {
                       "name": "Pack Version",
-                      "value": "1.0.0",
-                      "inline": true
+                      "value": "1.0.0"
                     },
                     {
                       "name": "Loader",
-                      "value": "NeoForge",
-                      "inline": true
+                      "value": "NeoForge"
                     },
                     {
                       "name": "Minecraft",
-                      "value": "1.21.1",
-                      "inline": true
+                      "value": "1.21.1"
                     },
                     {
                       "name": "Changelog",
@@ -56,6 +53,9 @@ jobs:
                       "name": "Links",
                       "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/1.0.0)\n→ [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n→ [Optional support](https://ko-fi.com/irunatbullets)"
                     }
-                  ]
+                  ],
+                  "thumbnail": {
+                    "url": "https://cdn.modrinth.com/data/mPwYBsJ3/images/25bd95745cd6cc5d7d25c34c642792ffbdd48ead.png"
+                  }
                 }
               ]
