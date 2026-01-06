@@ -1,0 +1,29 @@
+name: Discord
+run-name: "Discord #${{ github.run_number }}"
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  discord-message:
+      name: Discord Message
+      runs-on: ubuntu-latest
+      if: github.repository_owner == 'irunatbullets'
+      steps:
+        - name: Send Discord message
+          uses: hugoalh/send-discord-webhook-ghaction@v7.0.5
+          with:
+            key: "${{secrets.DISCORD_WEBHOOK}}"
+            username: "irunatbullets"
+            avatar_url: "https://cdn.modrinth.com/data/PoHFfv3G/53d3a9085947f25804334a2c5de8f656f3bb2f20.png"
+            content_links_no_embed: .+
+            content: |
+              test
