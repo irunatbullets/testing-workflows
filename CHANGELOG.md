@@ -2,18 +2,7 @@
 
 ## [1.0.8]
 
-Special mention about how I'm not very good at this.
-
-**Improvements ✨**
-- Removed geese
-
-**Added ✅**
-- Something
-- [Something else](https://modrinth.com)
-
-**Removed ❌**
-- Yo
-- Yo yo
+Special **mention** about how I'm not very good at this.
 
 **Bugfixes 🐛**
 - Config stuff
@@ -21,17 +10,6 @@ Special mention about how I'm not very good at this.
 ## [1.0.5]
 
 Special mention about how I'm not very good at this.
-
-**Improvements ✨**
-- Removed geese
-
-**Added ✅**
-- Something
-- Something else
-
-**Removed ❌**
-- Yo
-- Yo yo
 
 **Bugfixes 🐛**
 - Config stuff
