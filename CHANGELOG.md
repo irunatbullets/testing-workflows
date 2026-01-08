@@ -2,10 +2,7 @@
 
 ## [1.0.8]
 
-Special **mention** about how I'm not very good at this.
-
-**Bugfixes 🐛**
-- Config stuff
+Some **kinda cool** thing!
 
 ## [1.0.5]
 
