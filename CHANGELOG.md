@@ -4,6 +4,8 @@
 
 Some **kinda cool** thing!
 
+Oh, that's right, I wanted to check what paragraphs would looks like!
+
 ## [1.0.5]
 
 Special mention about how I'm not very good at this.
