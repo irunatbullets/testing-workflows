@@ -101,20 +101,19 @@ jobs:
           #   → [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)
           #   → [Full changelog](https://github.com/irunatbullets/surface-living/blob/main/CHANGELOG.md)
           #   → [Optional support](https://ko-fi.com/irunatbullets)
-
           embeds: |
             [
               {
-                "title": "Surface Living — New Release [${{ needs.info.outputs.project_version }}]",
+                "title": "${{ needs.info.outputs.project_name }} - New Release [${{ needs.info.outputs.project_version }}]",
                 "url": "https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }}",
                 "color": 5763719,
-                "description": "A fresh update to **Surface Living** is out.",
+                "description": "A fresh update to **${{ needs.info.outputs.project_name }}** is out.\n\n${{ needs.info.outputs.release_summary }}",
                 "fields": [
                   {
                     "name": "Links",
                     "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }})\n
-                    → [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n
-                    → [Full changelog](https://github.com/irunatbullets/surface-living/blob/main/CHANGELOG.md)\n
+                    → [Issue tracker & feedback](https://github.com/irunatbullets/${{ needs.info.outputs.project_safe_name }}/issues)\n
+                    → [Full changelog](https://modrinth.com/modpack/surface-living/changelog)\n
                     → [Optional support](https://ko-fi.com/irunatbullets)"
                   }
                 ],
@@ -123,6 +122,28 @@ jobs:
                 }
               }
             ]
+
+          # embeds: |
+          #   [
+          #     {
+          #       "title": "Surface Living — New Release [${{ needs.info.outputs.project_version }}]",
+          #       "url": "https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }}",
+          #       "color": 5763719,
+          #       "description": "A fresh update to **Surface Living** is out.",
+          #       "fields": [
+          #         {
+          #           "name": "Links",
+          #           "value": "→ [View this release on Modrinth](https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }})\n
+          #           → [Issue tracker & feedback](https://github.com/irunatbullets/surface-living/issues)\n
+          #           → [Full changelog](https://github.com/irunatbullets/surface-living/blob/main/CHANGELOG.md)\n
+          #           → [Optional support](https://ko-fi.com/irunatbullets)"
+          #         }
+          #       ],
+          #       "thumbnail": {
+          #         "url": "https://cdn.modrinth.com/data/mPwYBsJ3/images/25bd95745cd6cc5d7d25c34c642792ffbdd48ead.png"
+          #       }
+          #     }
+          #   ]
 
           # embeds: |
           #   [
