@@ -128,7 +128,7 @@ jobs:
                 "title": "Surface Living - New Release [${{ needs.info.outputs.project_version }}]",
                 "url": "https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }}",
                 "color": 5763719,
-                "description": "A fresh update to **Surface Living** is out.\n\n${{ steps.discord_changelog.outputs.changelog_escaped }}",
+                "description": "${{ steps.discord_changelog.outputs.changelog_escaped }}",
                 "fields": [
                   {
                     "name": "Links",
@@ -137,7 +137,10 @@ jobs:
                     → [Full changelog](https://modrinth.com/modpack/surface-living/changelog)\n
                     → [Optional support](https://ko-fi.com/irunatbullets)"
                   }
-                ]
+                ],
+                "thumbnail": {
+                  "url": "https://cdn.modrinth.com/data/mPwYBsJ3/images/25bd95745cd6cc5d7d25c34c642792ffbdd48ead.png"
+                }
               }
             ]
 
