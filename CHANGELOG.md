@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.7]
+## [1.0.8]
 
 Special mention about how I'm not very good at this.
 

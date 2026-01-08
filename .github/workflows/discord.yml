@@ -107,7 +107,7 @@ jobs:
                 "title": "${{ needs.info.outputs.project_name }} - New Release [${{ needs.info.outputs.project_version }}]",
                 "url": "https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }}",
                 "color": 5763719,
-                "description": "A fresh update to **${{ needs.info.outputs.project_name }}** is out.\n\n${{ needs.info.outputs.release_summary }}",
+                "description": "A fresh update to **${{ needs.info.outputs.project_name }}** is out.\n\n${{ needs.info.outputs.changelogy }}",
                 "fields": [
                   {
                     "name": "Links",
