@@ -2,9 +2,7 @@
 
 ## [1.0.8]
 
-Some **kinda cool** thing!
-
-Oh, that's right, I wanted to check what paragraphs would looks like!
+A couple of helpful ghosts have shown up in the neighborhood. I hope they aren't annoying as all of these geese.
 
 ## [1.0.5]
 
