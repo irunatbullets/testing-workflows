@@ -104,10 +104,10 @@ jobs:
           embeds: |
             [
               {
-                "title": "${{ needs.info.outputs.project_name }} - New Release [${{ needs.info.outputs.project_version }}]",
+                "title": "Surface Living - New Release [${{ needs.info.outputs.project_version }}]",
                 "url": "https://modrinth.com/modpack/surface-living/version/${{ needs.info.outputs.project_version }}",
                 "color": 5763719,
-                "description": "A fresh update to **${{ needs.info.outputs.project_name }}** is out.\n\n${{ needs.info.outputs.changelogy }}",
+                "description": "A fresh update to **Surface Living** is out.\n\n${{ needs.info.outputs.changelog }}",
                 "fields": [
                   {
                     "name": "Links",
